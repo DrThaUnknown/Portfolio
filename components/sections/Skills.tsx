@@ -1,41 +1,39 @@
 "use client";
 
-import React from 'react'
-import Image from 'next/image';
+import React from "react";
 import { motion } from "framer-motion";
-import Planet from '../visual/Planet'
-import { PythonIcon, JavaIcon, JavaScriptIcon, AwsIcon, Css3Icon, DjangoIcon, DockerIcon, ExpressIcon, FlaskIcon, FramerMotionIcon, GitIcon, GithubIcon, Html5Icon, LinuxIcon, MongodbIcon, NextjsIcon, NodejsIcon, NpmIcon, NumpyIcon, PandasIcon, PnpmIcon, PostgresqlIcon, ReactIcon, ScikitlearnIcon, TailwindIcon, VercelIcon, VscodeIcon } from "@/app/assets/icons";
 
-const ICON_CLASS = "w-10 h-10 text-neutral-300";
+const ICON_CLASS = "w-10 h-10";
 
 const skills = [
-  { name: "Python", Icon: PythonIcon },
-  { name: "Java", Icon: JavaIcon },
-  { name: "JavaScript", Icon: JavaScriptIcon },
-  { name: "AWS", Icon: AwsIcon },
-  { name: "CSS3", Icon: Css3Icon },
-  { name: "Django", Icon: DjangoIcon },
-  { name: "Docker", Icon: DockerIcon },
-  { name: "Express", Icon: ExpressIcon },
-  { name: "Flask", Icon: FlaskIcon },
-  { name: "Framer Motion", Icon: FramerMotionIcon },
-  { name: "Git", Icon: GitIcon },
-  { name: "GitHub", Icon: GithubIcon },
-  { name: "HTML5", Icon: Html5Icon },
-  { name: "Linux", Icon: LinuxIcon },
-  { name: "MongoDB", Icon: MongodbIcon },
-  { name: "Next.js", Icon: NextjsIcon },
-  { name: "Node.js", Icon: NodejsIcon },
-  { name: "npm", Icon: NpmIcon },
-  { name: "NumPy", Icon: NumpyIcon },
-  { name: "Pandas", Icon: PandasIcon },
-  { name: "pnpm", Icon: PnpmIcon },
-  { name: "PostgreSQL", Icon: PostgresqlIcon },
-  { name: "React", Icon: ReactIcon },
-  { name: "scikit-learn", Icon: ScikitlearnIcon },
-  { name: "Tailwind", Icon: TailwindIcon },
-  { name: "Vercel", Icon: VercelIcon },
-  { name: "VS Code", Icon: VscodeIcon },
+  { name: "Python", src: "/icons/python.svg" },
+  { name: "Java", src: "/icons/java.svg" },
+  { name: "JavaScript", src: "/icons/javascript.svg" },
+  { name: "TypeScript", src: "/icons/typescript.svg" },
+  { name: "AWS", src: "/icons/aws.svg" },
+  { name: "CSS3", src: "/icons/css3.svg" },
+  { name: "HTML5", src: "/icons/html5.svg" },
+  { name: "Django", src: "/icons/django.svg" },
+  { name: "Docker", src: "/icons/docker.svg" },
+  { name: "Express", src: "/icons/express.svg" },
+  { name: "Flask", src: "/icons/flask.svg" },
+  { name: "Framer Motion", src: "/icons/framermotion.svg" },
+  { name: "Git", src: "/icons/git.svg" },
+  { name: "GitHub", src: "/icons/github.svg" },
+  { name: "Linux", src: "/icons/linux.svg" },
+  { name: "MongoDB", src: "/icons/mongodb.svg" },
+  { name: "Next.js", src: "/icons/nextjs.svg" },
+  { name: "Node.js", src: "/icons/nodejs.svg" },
+  { name: "npm", src: "/icons/npm.svg" },
+  { name: "NumPy", src: "/icons/numpy.svg" },
+  { name: "Pandas", src: "/icons/pandas.svg" },
+  { name: "pnpm", src: "/icons/pnpm.svg" },
+  { name: "PostgreSQL", src: "/icons/postgresql.svg" },
+  { name: "React", src: "/icons/react.svg" },
+  { name: "scikit-learn", src: "/icons/scitlearn.svg" },
+  { name: "Tailwind", src: "/icons/tailwind.svg" },
+  { name: "Vercel", src: "/icons/vercel.svg" },
+  { name: "VS Code", src: "/icons/vscode.svg" },
 ];
 
 export default function Skills() {
@@ -44,7 +42,7 @@ export default function Skills() {
       <h2 className="flex justify-center text-4xl font-bold">Skills</h2>
 
       <div className="flex flex-wrap gap-8 justify-center items-center m-5 max-w-5xl mx-auto">
-        {skills.map(({ name, Icon }) => (
+        {skills.map(({ name, src }) => (
           <motion.div
             key={name}
             whileHover={{ scale: 1.08 }}
@@ -52,8 +50,8 @@ export default function Skills() {
             transition={{ duration: 0.15 }}
             className="flex flex-col items-center gap-2"
           >
-            <Icon className={ICON_CLASS} aria-label={name} />
-            <span className="text-xs text-(--text)">{name}</span>
+            <img src={src} alt={name} width={40} height={40} className={ICON_CLASS} />
+            <span className="text-xs text-[var(--text)]">{name}</span>
           </motion.div>
         ))}
       </div>
