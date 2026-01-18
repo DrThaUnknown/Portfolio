@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroAnimation from '../visual/HeroAnimation'
+import Planet from '../visual/Planet'
 import ConnectButton from '../visual/ConnectButton';
 
 export default function Hero() {
@@ -10,7 +10,10 @@ export default function Hero() {
             <h2 className='text-2xl'>This is just a place to showcase <br /> my skills and passion</h2>
             <ConnectButton/>
         </div>
-        <HeroAnimation/>
+        <div className="flex flex-col items-center gap-4">
+          <Planet/>
+    
+        </div>
     </section>
   )
 }
