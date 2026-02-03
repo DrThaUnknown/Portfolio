@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -41,8 +42,15 @@ return (
                         <Link href="/"><motion.button 
                             whileHover={{scale:1.05}}
                             whileTap={{scale: 0.95}}
-                            className="flex justify-center">
-                                <h3>Anthony Contreras</h3>
+                            className="flex items-center gap-3 justify-center">
+                                <Image
+                                    src="/icons/logo.svg"
+                                    alt="anthonycodes logo"
+                                    width={32}
+                                    height={32}
+                                    priority
+                                />
+                                <h3>Anthonycodes</h3>
                         </motion.button></Link>
                     </div>
                     {/* Link Buttons */}
