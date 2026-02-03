@@ -34,6 +34,7 @@ return (
     >
         <div>
             <section className='flex justify-center py-5'>
+                {/* Home Link/Logo */}
                 <div className='flex justify-between items-center w-240 h-20 rounded-4xl bg-(--bg) hover:bg-linear-to-bl hover:from-(--bg-light) hover:to-(--bg) p-10 border border-t-(--highlight) border-(--border-muted)
                                 drop-shadow-md hover:drop-shadow-neutral-500'>
                     <div className='flex'>
@@ -44,6 +45,7 @@ return (
                                 <h3>Anthony Contreras</h3>
                         </motion.button></Link>
                     </div>
+                    {/* Link Buttons */}
                     <div className='flex justify-center'>
                         <nav className="">
                             <ul className='flex flex-row gap-5'>
@@ -80,27 +82,6 @@ return (
                                 transition={{ duration: 0.15 }}
                                 className='relative text-neutral-300 hover:text-neutral-50'>
                                     About
-                                    <motion.span
-                                        variants={{
-                                        rest: { scaleX: 0 },
-                                        hover: { scaleX: 1 },
-                                        }}
-                                        transition={{ duration: 0.25, ease: "easeOut" }}
-                                        className="absolute left-0 bottom-0 h-[2px] w-full bg-neutral-50 origin-left"
-                                    />
-                                    </motion.button></Link></li>
-                                <li><Link href="/projects"><motion.button
-                                variants={{
-                                    rest: { scale: 1 },
-                                    hover: { scale: 1.05 },
-                                }}
-                                whileHover="hover"
-                                whileTap={{scale: 0.95}}
-                                initial="rest"
-                                animate={pathname === "/projects" ? "hover" : "rest"}
-                                transition={{ duration: 0.15 }}
-                                className='relative text-neutral-300 hover:text-neutral-50'>
-                                    Projects
                                     <motion.span
                                         variants={{
                                         rest: { scaleX: 0 },
