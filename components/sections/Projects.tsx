@@ -12,6 +12,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Corazones Libres Platform",
+    description: "Led the design and development of a nonprofit web platform focused on supporting underserved communities through food assistance and educational initiatives, handling UI/UX design, custom CSS, content structure, and donation flow optimization.",
+    tags: ["Web Development", "UI/UX", "WordPress", "CSS", "Nonprofit"],
+    category: "Full-Stack & Web",
+  },
+  {
     title: "Stroke Prediction Model",
     description: "Built and evaluated an ML model using Python, Pandas, and Scikit-learn on a 5,000+ record Kaggle dataset to predict stroke likelihood (~85% accuracy), focusing on feature engineering and model tuning to reduce false predictions.",
     tags: ["Python", "Pandas", "Scikit-learn", "ML"],
