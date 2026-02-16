@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import Image from next/image
 
 const ICON_CLASS = "w-12 h-12 sm:w-14 sm:h-14";
 
@@ -152,10 +153,12 @@ export default function Skills() {
                           ease: "easeInOut",
                         }}
                       />
-                      <img 
+                      <Image 
                         src={skill.src} 
                         alt={skill.name} 
-                        className={`${ICON_CLASS} relative z-10`}
+                        className={`${ICON_CLASS}`} 
+                        width={48} 
+                        height={48} 
                       />
                     </div>
                     <span className="text-xs sm:text-sm text-(--text-muted) group-hover:text-(--text) transition-colors">

@@ -16,24 +16,28 @@ const projects: Project[] = [
     description: "Led the design and development of a nonprofit web platform focused on supporting underserved communities through food assistance and educational initiatives, handling UI/UX design, custom CSS, content structure, and donation flow optimization.",
     tags: ["Web Development", "UI/UX", "WordPress", "CSS", "Nonprofit"],
     category: "Full-Stack & Web",
+    link: "https://corazoneslibres.org/",
   },
   {
     title: "Stroke Prediction Model",
     description: "Built and evaluated an ML model using Python, Pandas, and Scikit-learn on a 5,000+ record Kaggle dataset to predict stroke likelihood (~85% accuracy), focusing on feature engineering and model tuning to reduce false predictions.",
     tags: ["Python", "Pandas", "Scikit-learn", "ML"],
     category: "AI & Machine Learning",
+    link: "https://github.com/johnnyJCB/ML-AI_Project",
   },
   {
     title: "Sentiment Analysis Platform (VibeChecker)",
     description: "Full-stack React + Django web app using the ChatGPT API and Sentiment140 to analyze emotional tone in real time, with optimized frontend-backend communication for faster responses.",
     tags: ["React", "Django", "ChatGPT API", "Sentiment140"],
     category: "AI & Machine Learning",
+    link: "https://github.com/johnnyJCB/Techwise_Project3/tree/MVP_FrontEnd",
   },
   {
     title: "Blackjack Web Game",
     description: "Full-stack game built with React (Vite), Express, and MongoDB featuring authentication, wallet persistence, win streak tracking, dealer logic, and multi-page gameplay flow.",
     tags: ["React", "Vite", "Express", "MongoDB"],
     category: "Full-Stack & Web",
+    link: "https://github.com/DrThaUnknown/BlackJack",
   },
   {
     title: "Next.js Developer Portfolio",
@@ -46,6 +50,7 @@ const projects: Project[] = [
     description: "Flask-based application using the Last.fm API to generate personalized playlists, handling API data parsing, JSON responses, and dynamic rendering.",
     tags: ["Flask", "Python", "Last.fm API", "REST"],
     category: "Full-Stack & Web",
+    link: "https://github.com/DrThaUnknown/CISC-371-Project---Playlist-Generator-Frontend",
   },
   {
     title: "Django Web Application",
@@ -64,12 +69,14 @@ const projects: Project[] = [
     description: "Implemented a flocking simulation demonstrating emergent behavior using alignment, cohesion, and separation rules.",
     tags: ["Python", "Simulation", "AI"],
     category: "Algorithms & Systems",
+    link: "https://github.com/TirthOfficials/Boids",
   },
   {
     title: "Akinator-Style Guessing Game",
     description: "Logic-based guessing game using decision trees and iterative question narrowing.",
     tags: ["Python", "Decision Trees", "Logic"],
     category: "Algorithms & Systems",
+    link: "https://github.com/ezizbagshiyev/team-animal-akinator",
   },
   {
     title: "Self-Hosted Game Server Stack",
@@ -177,58 +184,60 @@ export default function Projects() {
               key={project.title}
               variants={projectVariants}
               whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
+              y: -8,
+              transition: { duration: 0.3 }
               }}
               className='flex flex-col gap-4 p-6 rounded-2xl bg-(--bg) border border-(--border-muted) hover:border-(--border) hover:bg-(--bg-light) transition-all duration-300 cursor-pointer group'
             >
               {/* Category Badge */}
               <div className='flex items-center justify-between'>
-                <span className='text-xs font-medium text-(--highlight) bg-(--bg-dark) px-3 py-1 rounded-full border border-(--border-muted)'>
-                  {project.category}
-                </span>
+              <span className='text-xs font-medium text-(--highlight) bg-(--bg-dark) px-3 py-1 rounded-full border border-(--border-muted)'>
+                {project.category}
+              </span>
               </div>
 
               {/* Project Title */}
               <h3 className="text-xl font-bold text-(--text) group-hover:text-(--primary) transition-colors">
-                {project.title}
+              {project.title}
               </h3>
 
               {/* Description */}
               <p className='text-sm text-(--text-muted) leading-relaxed flex-grow'>
-                {project.description}
+              {project.description}
               </p>
 
               {/* Tags */}
               <div className='flex flex-wrap gap-2 pt-2 border-t border-(--border-muted)'>
-                {project.tags.map((tag) => (
-                  <span 
-                    key={tag}
-                    className='text-xs text-(--text-muted) bg-(--bg-dark) px-2 py-1 rounded'
-                  >
-                    {tag}
-                  </span>
-                ))}
+              {project.tags.map((tag) => (
+                <span 
+                key={tag}
+                className='text-xs text-(--text-muted) bg-(--bg-dark) px-2 py-1 rounded'
+                >
+                {tag}
+                </span>
+              ))}
               </div>
 
               {/* Hover Effect Arrow */}
+              {project.link && (
               <motion.div
                 initial={{ x: -5, opacity: 0 }}
                 whileHover={{ x: 0, opacity: 1 }}
                 className='flex items-center gap-2 text-sm text-(--primary) font-medium'
               >
-                View Details
+                <a href={project.link} className='block text-center text-sm font-medium text-(--primary)'>View Details</a>
                 <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ 
-                    duration: 1.5, 
-                    repeat: Infinity,
-                    ease: "easeInOut" 
-                  }}
+                animate={{ x: [0, 5, 0] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
                 >
-                  →
+                →
                 </motion.span>
               </motion.div>
+              )}
             </motion.div>
           ))}
         </motion.div>

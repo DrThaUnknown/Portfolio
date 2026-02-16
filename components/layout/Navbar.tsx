@@ -26,7 +26,6 @@ useEffect(() => {
 
 return (
     <motion.div
-        whileHover={{scale : 1.02}}
         initial={{ y: 0 }}
         animate={{ y: isVisible ? 0 : -100 }}
         exit={{ y: -100 }}
@@ -34,10 +33,10 @@ return (
         className="fixed top-0 left-0 right-0 z-10"
     >
         <div>
-            <section className='flex justify-center py-5'>
+            <section className='flex justify-center py-5 px-4'>
                 {/* Home Link/Logo */}
-                <div className='flex justify-between items-center w-240 h-20 rounded-4xl bg-(--bg) hover:bg-linear-to-bl hover:from-(--bg-light) hover:to-(--bg) p-10 border border-t-(--highlight) border-(--border-muted)
-                                drop-shadow-md hover:drop-shadow-neutral-500'>
+                <div className='flex justify-between items-center w-full md:w-240 h-20 rounded-4xl bg-(--bg) hover:bg-linear-to-bl hover:from-(--bg-light) hover:to-(--bg) p-4 md:p-10 border border-t-(--highlight) border-(--border-muted)
+                                drop-shadow-md hover:drop-shadow-neutral-500 max-w-6xl '>
                     <div className='flex'>
                         <Link href="/"><motion.button 
                             whileHover={{scale:1.05}}
@@ -50,7 +49,7 @@ return (
                                     height={32}
                                     priority
                                 />
-                                <h3>Anthonycodes</h3>
+                                <h3 className="hidden md:block">Anthonycodes</h3>
                         </motion.button></Link>
                     </div>
                     {/* Link Buttons */}
@@ -110,7 +109,7 @@ return (
                                 animate={pathname === "/contact" ? "hover" : "rest"}
                                 transition={{ duration: 0.15 }}
                                 className='relative text-neutral-300 hover:text-neutral-50'>
-                                    Contact
+                                    Get In Touch
                                     <motion.span
                                         variants={{
                                         rest: { scaleX: 0 },
