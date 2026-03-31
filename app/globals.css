@@ -15,19 +15,29 @@
   --warning: oklch(0.7 0.05 100);
   --success: oklch(0.7 0.05 160);
   --info: oklch(0.7 0.05 260);
+  --planet-glow: rgba(212, 163, 115, 0.4);
+  --frame: rgba(212, 163, 115, 0.14);
+  --nebula-a: #110803;
+  --nebula-b: #5c2e0f;
+  --nebula-c: #f3c36d;
 }
 
 body {
   background-color: var(--bg-dark);
   color: var(--text);
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 html {
   scroll-behavior: smooth;
-  -ms-overflow-style: none;  
-  scrollbar-width: none;    
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
